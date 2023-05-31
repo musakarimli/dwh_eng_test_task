@@ -10,13 +10,21 @@ https://stackoverflow.com/questions/45963507/spark-dataframes-are-getting-create
 1. Install the docker
 
 2. Run below commands:
+```bash
     docker build . -t sparkhome
+```
 
 3. If you want only run test
+```bash
     docker run --name spark_container sparkhome /bin/bash -c "cd /opt/spark/ && pytest etl_test.py" 
+```
 
 4. If you want run main script
+```bash
     docker run --name spark_container sparkhome /bin/bash -c "cd /opt/spark/ && python main.py" 
+```
 
-5. This command will transfer exported file from container to the local directory     
+5. This command will transfer exported file from container to the local directory
+```bash
     docker cp spark_container:opt/spark/output/test_transformed test_transformed
+```
