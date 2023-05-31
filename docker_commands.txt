@@ -1,0 +1,5 @@
+docker build . -t sparkhome
+docker run --name spark_container sparkhome /bin/bash -c "cd /opt/spark/ && python main.py" 
+docker run --name spark_container sparkhome /bin/bash -c "cd /opt/spark/ && pytest etl_test.py" 
+docker exec -it spark_container bash
+docker cp spark_container:opt/spark/output/test_transformed test_transformed

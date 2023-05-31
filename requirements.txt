@@ -1,0 +1,6 @@
+pyspark==3.2.1
+jupyterlab
+pandas
+pyyaml
+delta-spark
+pytest
